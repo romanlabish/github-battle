@@ -8,8 +8,8 @@ var PromptContainer = React.createClass({
 
   getInitialState: function() {
     return {
-      username: '',
-    }
+      username: ''
+    };
   },
 
   handleUpdateUser: function(e) {
@@ -20,7 +20,7 @@ var PromptContainer = React.createClass({
 
   handleSubmitUser: function(e) {
     e.preventDefault();
-    var username = this.state.username;
+    //var username = this.state.username;
 
     this.setState({
       username: ''
@@ -33,7 +33,7 @@ var PromptContainer = React.createClass({
           playerOne: this.props.routeParams.playerOne,
           playerTwo: this.state.username
         }
-      })
+      });
     } else {
       this.context.router.push('playerTwo/' + this.state.username);
     }
@@ -44,9 +44,9 @@ var PromptContainer = React.createClass({
         onSubmitUser={this.handleSubmitUser}
         onUpdateUser={this.handleUpdateUser}
         header={this.props.route.header}
-        username={this.state.username}/>
+        username={this.state.username} />
     );
   }
-})
+});
 
 module.exports = PromptContainer;
